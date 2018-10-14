@@ -1,2 +1,1 @@
-This is a second text file on git.
-Changes to second file.
+These are changes to the second file!
