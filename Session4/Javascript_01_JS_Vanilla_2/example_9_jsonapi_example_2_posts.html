@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Javascript Tests</title>
+    </head>
+    <body>
+        <h1 id="time">Hello World</h1>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Post</th>
+                    <th>Title</th>
+                    <th>Body</th>
+                </tr>
+            </thead>
+            <tbody>
+                <td style="min-width: 150px;">
+                    <select id="post_selector" name="post_id" style="min-width: 150px; width:100%" onchange="change_post();">
+                        <option value="" disabled selected>Select your Post</option>
+                        <option id="1" value="1"> 1 </option>
+                        <option id="2" value="2"> 2 </option>
+                        <option id="3" value="3"> 3 </option>
+                    </select>
+
+                </td>
+                <td id="selected_post_title"></td>
+                <td id="selected_post_body"></td>
+            </tbody>
+        </table>
+
+        <script type="text/javascript" src="example_9_jsonapi_example_2_posts.js"></script>
+    </body>
+</html>
