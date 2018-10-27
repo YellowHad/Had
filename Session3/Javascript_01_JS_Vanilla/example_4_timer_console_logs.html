@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript Tests</title>
+</head>
+<body>
+    <h1 id="welcome_header">Hello World</h1>
+    <h1 id="time"></h1>
+
+    <script type="text/javascript">
+        function set_time(){
+            var now = new Date();
+            now = now.toLocaleString();
+            console.log(now);
+            document.getElementById("time").innerHTML = now;
+        }
+
+        setInterval(set_time, 1000);
+    </script>
+</body>
+</html>

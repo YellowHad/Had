@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript Tests</title>
+</head>
+<body>
+    <h1 id="time">Hello World</h1>
+
+    <h2>Random Numbers list</h2>
+    <ul id="list">
+
+    </ul>
+
+    <script type="text/javascript">
+
+        function get_random_number(low, high) {
+            return low + Math.floor(Math.random() * (high-low));
+        }
+
+        function appender() {
+          var ul = document.getElementById("list");
+          var li = document.createElement("li");
+          li.appendChild(document.createTextNode(get_random_number(1,100)));
+          ul.appendChild(li);
+        }
+
+        setInterval(appender, 1000);
+    </script>
+</body>
+</html>

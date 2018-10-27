@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript Tests</title>
+</head>
+<body>
+    <h1 id="time">Hello World</h1>
+
+    <h2>Even Numbers list</h2>
+    <ul id="list">
+
+    </ul>
+
+    <script type="text/javascript">
+
+        function appender(number) {
+          var ul = document.getElementById("list");
+          var li = document.createElement("li");
+          li.appendChild(document.createTextNode(number));
+          ul.appendChild(li);
+        }
+
+        // for loop
+
+        for(var i=0; i<100; i++){
+            if(i%2==0){
+                appender(i);
+            }
+            else if (i % 3 === 0){
+                appender(i + "  is divisor of 3");
+            }
+            else {
+                appender("Not Right");
+            }
+        }
+
+        // do while
+
+        var k = 0;
+        do{
+            appender((new Date()).toLocaleString());
+            k++;
+        }while(k < 10)
+
+        // while
+
+        var l = 0;
+        while(true){
+            j++;
+            if(j === 10){ break; }
+        }
+
+    </script>
+</body>
+</html>

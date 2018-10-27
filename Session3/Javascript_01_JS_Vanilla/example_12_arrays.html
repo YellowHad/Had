@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Javascript Tests</title>
+    </head>
+    <body>
+        <h1 id="fruits1"></h1>
+        <h1 id="fruits2"></h1>
+
+        <button onclick="start_appender();">Append Fruits to List</button>
+
+        <ul id="list">
+
+        </ul>
+
+        <script type="text/javascript">
+            var fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+            document.getElementById("fruits1").innerHTML = fruits.toString();
+
+            document.getElementById("fruits2").innerHTML = fruits.join(" * ");
+
+
+            function appender(li_text) {
+                var ul = document.getElementById("list");
+                var li = document.createElement("li");
+                li.appendChild(document.createTextNode(li_text));
+                ul.appendChild(li);
+            }
+
+            function start_appender(){
+                fruits.forEach(function(fruit) {
+                    appender(fruit);
+                });
+            }
+
+        </script>
+
+    </body>
+</html>

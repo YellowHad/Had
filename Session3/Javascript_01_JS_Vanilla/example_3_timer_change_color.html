@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript Tests</title>
+</head>
+<body>
+    <h1 id="welcome_header">Hello World</h1>
+    <h1 id="time"></h1>
+    <h1 id="seconds"></h1>
+
+    <script type="text/javascript">
+        var is_blue = true;
+        function set_time(){
+            is_blue = !is_blue
+            document.getElementById("time").innerHTML = (new Date()).toLocaleString();
+            document.getElementById("seconds").innerHTML = (new Date()).getSeconds();
+            document.getElementById("seconds").style.color = is_blue ? "blue":"red";
+        }
+        setInterval(set_time, 1000);
+    </script>
+</body>
+</html>

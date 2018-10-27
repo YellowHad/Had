@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Javascript Tests</title>
+    </head>
+    <body>
+        <h1 id="time">Hello World</h1>
+        <!--Write a page with a selector showing ids.-->
+        <!--Once an option is selected, corresponding data ("title", "url", "thumbnailUrl") about the photo is displayed-->
+        <!--https://jsonplaceholder.typicode.com/photos/2-->
+
+        <!--This is just a suggestion as there are many ways to solve this-->
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Photo</th>
+                    <th>Title</th>
+                    <th>PhotoImage (URL)</th>
+                    <th>PhotoImage (ThumbnailUrl)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <td style="min-width: 150px;">
+                    <select id="photo_selector" name="photo_id" style="min-width: 150px; width:100%" onchange="change_photo();">
+                        <option value="" disabled selected>Select your Photo</option>
+                        <option id="1" value="1"> 1 </option>
+                        <option id="2" value="2"> 2 </option>
+                        <option id="3" value="3"> 3 </option>
+                    </select>
+
+                </td>
+                <td id="selected_photo_title"></td>
+                <td id="selected_photo_url"></td>
+                <td id="selected_photo_thumbnailurl"></td>
+            </tbody>
+        </table>
+
+        <script type="text/javascript">
+
+            function change_photo(){
+
+                var photo_url = document.getElementById('selected_photo_url');
+                var photo_thumbnailurl = document.getElementById('selected_photo_thumbnailurl');
+                var photo_title = document.getElementById('selected_photo_title');
+                var selector = document.getElementById('photo_selector');
+                var selected_value = selector.options[selector.selectedIndex].value;
+
+                var url = 'https://jsonplaceholder.typicode.com/photos/'+selected_value;
+                console.log(selector);
+                console.log(selected_value);
+                console.log(url);
+
+                fetch(url)
+                    .then((resp) => resp.json())
+                        .then(function(response){
+                            photo_title.innerHTML = response["title"];
+                            photo_url.innerHTML = "<img src="+response['url']+">";
+                            photo_thumbnailurl.innerHTML = "<img src="+response['thumbnailUrl']+">";
+                });
+            }
+        </script>
+    </body>
+</html>

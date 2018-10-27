@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Javascript Tests</title>
+    </head>
+    <body>
+        <h1 id="time">Hello World</h1>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Coin</th>
+                    <th>Exchange Rate (EURO)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <td style="min-width: 150px;">
+                    <select id="coin_selector" name="coin_symbol" style="min-width: 150px; width:100%" onchange="change_coin();">
+                        <option value="" disabled selected>Select your Coin</option>
+                        <option id="BTC" value="BTC"> Bitcoin (BTC)</option>
+                        <option id="ETH" value="ETH"> Ethereum (ETH)</option>
+                        <option id="XLM" value="XLM"> Lumen (XLM)</option>
+                    </select>
+
+                </td>
+                <td id="selected_coin_exchange_rate"></td>
+            </tbody>
+        </table>
+
+        <script type="text/javascript">
+
+            function change_coin(){
+
+                var coin_exchange_rate = document.getElementById('selected_coin_exchange_rate');
+                var selector = document.getElementById('coin_selector');
+                var selected_value = selector.options[selector.selectedIndex].value;
+
+                console.log(selector);
+                console.log(selected_value);
+                console.log('https://min-api.cryptocompare.com/data/price?fsym='+selected_value+'&tsyms=EUR');
+
+                fetch('https://min-api.cryptocompare.com/data/price?fsym='+selected_value+'&tsyms=EUR')
+                    .then((resp) => resp.json())
+                        .then(function(response){
+                            coin_exchange_rate.innerHTML = +response["EUR"];
+                });
+            }
+        </script>
+    </body>
+</html>

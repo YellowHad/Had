@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <title>Robots</title>
+</head>
+<body>
+
+<h1>Robot Test</h1>
+
+
+<div class="row">
+    <div class="col-md-6">
+        <h2 id="add-topic-heading">Add new topic</h2>
+
+        <form method="post">
+            <input type="hidden" name="csrf_token" value="{{csrf_token}}">
+
+            <div class="form-group">
+                <label>Title</label>
+                <input type="text" class="form-control" name="title" id="add-topic-title" required>
+            </div>
+
+            <div class="form-group">
+                <label>Text</label>
+                <textarea name="text" class="form-control" rows="6" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label id="add-topic-sum-label"> ... </label>
+                <input type="text" class="form-control" id="add-topic-sum" required>
+            </div>
+
+            <button type="submit" class="btn btn-success" id="add-topic-button">Submit</button>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript" src="example_040_jquery_robot_test.js"></script>
+
+</body>
+</html>
